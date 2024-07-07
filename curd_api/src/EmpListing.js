@@ -45,9 +45,9 @@ const EmpListing = () => {
                   <td>{employee.email}</td>
                   <td>{employee.phone}</td>
                   <td>
-                   <button className='btn btn-primary m-1'> Add</button>
-                   <button className='btn btn-success m-1'> Edit</button>
-                   <button className='btn btn-danger m-1'> Delete</button>
+                   <a onClick={()=>{handleView(item.id)}} className='btn btn-primary m-1'> View</a>
+                   <a onClick={()=>{handleEdit(item.id)}} className='btn btn-success m-1'> Edit</a>
+                   <a onClick={()=>{handleDelete(item.id)}} className='btn btn-danger m-1'> Delete</a>
                   </td>
                 </tr>
               ))}

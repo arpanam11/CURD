@@ -1,36 +1,23 @@
 {
   "employees": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Arpana",
       "email": "arpana@123.com",
       "phone": "12345678"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Shweta",
       "email": "shweta@123.com",
       "phone": "12345678"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Payal",
       "email": "payal@123.com",
       "phone": "12345678"
-    },
-    {
-      "id": "90d1",
-      "name": "tinku",
-      "email": "rtuu",
-      "phone": "yyyyyy",
-      "active": true
-    },
-    {
-      "id": "2310",
-      "name": "subodh",
-      "email": "Subodh@gmail.com",
-      "phone": "567888655443",
-      "active": true
     }
+   
   ]
 }

@@ -9,7 +9,7 @@ const EmpCreate = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [active, setActive] = useState(true);
-
+  const [validation, setValidation] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log({ id, name, email, phone, active });
@@ -33,25 +33,20 @@ const EmpCreate = () => {
             <div className='card-body'>
               <div className="container">
                 <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label>ID:</label>
-                    <input
-                      className="form-control"
-                      placeholder="Enter ID"
-                      value={id}
-                      disabled
-                    />
-                  </div>
-                  <div className="form-group">
+                  
+                  <div className="form-group mt-3">
                     <label>Name:</label>
                     <input
+                        required
                       className="form-control"
                       placeholder="Enter Name"
                       value={name}
                       onChange={e => setName(e.target.value)}
+                      onMouseDown={e=>setValidation(true)}
                     />
+                  {name.length==0 && validation && <span className='text-danger'>Enter The Name</span>}
                   </div>
-                  <div className="form-group">
+                  <div className="form-group mt-3">
                     <label>Email:</label>
                     <input
                       className="form-control"
@@ -60,7 +55,7 @@ const EmpCreate = () => {
                       onChange={e => setEmail(e.target.value)}
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group mt-3">
                     <label>Phone:</label>
                     <input
                       className="form-control"
@@ -69,7 +64,7 @@ const EmpCreate = () => {
                       onChange={e => setPhone(e.target.value)}
                     />
                   </div>
-                  <div className="checkbox">
+                  <div className="checkbox mt-3">
                     <label>
                       <input
                         type="checkbox"
