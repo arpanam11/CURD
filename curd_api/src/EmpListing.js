@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const EmpListing = () => {
   const [employees, setEmployees] = useState([]);
-
+const navigate = useNavigate();
   const empData = async () => {
     try {
       const response = await axios.get(`http://localhost:5000/employees`);
@@ -18,7 +18,15 @@ const EmpListing = () => {
   useEffect(() => {
     empData();
   }, []);
-
+const handleView=(id)=>{
+  navigate("/employee/details/"+id)
+}
+const handleEdit=(id)=>{
+  navigate("/employee/edit/"+id)
+}
+const handleDelete=(id)=>{
+  
+}
   return (
     <div className='container'>
       <div className='card'>
@@ -45,9 +53,9 @@ const EmpListing = () => {
                   <td>{employee.email}</td>
                   <td>{employee.phone}</td>
                   <td>
-                   <a onClick={()=>{handleView(item.id)}} className='btn btn-primary m-1'> View</a>
-                   <a onClick={()=>{handleEdit(item.id)}} className='btn btn-success m-1'> Edit</a>
-                   <a onClick={()=>{handleDelete(item.id)}} className='btn btn-danger m-1'> Delete</a>
+                   <a onClick={()=>{handleView(employee.id)}} className='btn btn-primary m-1'> View</a>
+                   <a onClick={()=>{handleEdit(employee.id)}} className='btn btn-success m-1'> Edit</a>
+                   <a onClick={()=>{handleDelete(employee.id)}} className='btn btn-danger m-1'> Delete</a>
                   </td>
                 </tr>
               ))}
