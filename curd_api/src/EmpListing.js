@@ -24,9 +24,16 @@ const handleView=(id)=>{
 const handleEdit=(id)=>{
   navigate("/employee/edit/"+id)
 }
-const handleDelete=(id)=>{
-  
-}
+const handleDelete = async (id) => {
+  if (window.confirm('Do you want to delete this employee?')) {
+    try {
+      await axios.delete(`http://localhost:5000/employees/${id}`);
+      setEmployees(employees.filter(employee => employee.id !== id));
+    } catch (error) {
+      console.error('Error deleting employee:', error);
+    }
+  }
+};
   return (
     <div className='container'>
       <div className='card'>
