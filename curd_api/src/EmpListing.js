@@ -38,10 +38,10 @@ const handleDelete = async (id) => {
     <div className='container'>
       <div className='card'>
         <div className='card-title'>
-          <h2  className='text-center'>Employee Listing</h2>
+          <h2  className='text-center mt-4'>Employee Listing</h2>
         </div>
         <div className='card-body'>
-            <div className='d-flex ml-auto'>
+            <div className='d-flex justify-content-end mb-4'>
             <Link to="employee/create" className='btn btn-info text-white' >Create (+)</Link> 
             </div>
           <table className='table table-bordered'>

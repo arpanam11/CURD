@@ -25,7 +25,7 @@ const EmpDetails = () => {
         <div className='offset-lg-4 col-lg-4'>
           <div className='card'>
             <div className='card-title'>
-              <h2 className='text-center'>Employee Details</h2>
+              <h2 className='text-center mt-4'>Employee Details</h2>
             </div>
             <div className='card-body'>
               <div className="container">
